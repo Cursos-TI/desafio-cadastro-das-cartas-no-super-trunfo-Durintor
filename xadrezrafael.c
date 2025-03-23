@@ -65,7 +65,6 @@ int main(){
         
         printf("Quantos pontos turisticos:\n");
         scanf("%d", &pturistico2);
-        
         printf("Qual o PIB:\n");
         scanf("%f", &pib2);
          // Exibição dos dados cadastrados
