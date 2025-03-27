@@ -11,7 +11,7 @@ int main(){
     char cidade1 [20]; 
     char cidade2 [20];
     int populacao1, populacao2, pturistico1, pturistico2; //"pturistico" é a quantidade de pontos turistico.
-    float area1, area2, pib1, pib2;
+    float area1, area2, pib1, pib2, dpopulacional1, dpopulacional2, pibpc1, pibpc2;
 
 
     printf("========================================\n");
@@ -39,11 +39,13 @@ int main(){
     printf("Qual o tamanho da sua cidade em km²:\n");
     scanf("%f", &area1);
     
-    printf("Quantos pontos turisticos:\n");
+    printf("Quantos pontos turisticos: n");
     scanf("%d", &pturistico1);
     
     printf("Qual o PIB:\n");
     scanf("%f", &pib1);
+    dpopulacional1 = area1/populacao1; //execução para adiquirir o valor da variavel desncidade populacional
+
     printf("\n\n\n");
     //VAMOS AGORA CADASTRAR A SEGUNDA CARTA
 
@@ -67,6 +69,8 @@ int main(){
         scanf("%d", &pturistico2);
         printf("Qual o PIB:\n");
         scanf("%f", &pib2);
+        dpopulacional2 = area2/populacao2; //execução da divisão para adiquirir o valor da variavel de dpopulacional2
+
          // Exibição dos dados cadastrados
     printf("=================================================\n");
     printf("       PARABÉNS! SUAS CARTAS ESTÃO PRONTAS      \n");
@@ -78,6 +82,7 @@ int main(){
     printf("%c\n", estado1);
     printf("%s\n", codigo1);
     printf(" Cidade:%s\nHabitantes:%d\n Area(Km²):%f\nPontos Turisticos:%d\nPIB:%f\n", cidade1, populacao1, area1, pturistico1, pib1);
+    printf("Desncidade Pupulacional é:%.2f \n", dpopulacional1);
     printf("---------------------------------\n\n\n");
 
 
@@ -88,6 +93,7 @@ int main(){
     printf("%c\n", estado2);
     printf("%s\n", codigo2);
     printf("Cidade:%s\nHabitantes:%d\nArea(Km²):%f\nPontos Turisticos:%d\nPIB:%f\n", cidade2, populacao2, area2, pturistico2, pib2);
+    printf("Desncidade Pupulacional é:%.2f \n", dpopulacional2);
     printf("---------------------------------\n");
 
 
