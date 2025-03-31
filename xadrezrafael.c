@@ -13,9 +13,10 @@ int main(){
     char codigo2[] = "M1";
     char cidade1 [20]; 
     char cidade2 [20];
-    int populacao1, populacao2, pturistico1, pturistico2; //"pturistico" é a quantidade de pontos turistico.
+    unsigned long int populacao1, populacao2;
+    int pturistico1, pturistico2; //"pturistico" é a quantidade de pontos turistico.
     float area1, area2, pib1, pib2, dpopulacional1, dpopulacional2, pibpc1, pibpc2;
-    unsigned long int superpoder1, superpoder2;
+    long double superpoder1, superpoder2;
     float populacao, area, pib, pturisticos, dpopulacional, pibpc, superpoder;
 
             //introdução do jogo!
@@ -39,7 +40,7 @@ int main(){
     scanf("%s", &cidade1);
 
     printf("Quantidade de Habitantes:\n");
-    scanf("%d", &populacao1);
+    scanf("%lu", &populacao1);
     
     printf("Qual o tamanho da sua cidade em km²:\n");
     scanf("%f", &area1);
@@ -51,7 +52,7 @@ int main(){
     scanf("%f", &pib1);
     dpopulacional1 = populacao1 / area1;//execução para adiquirir o valor da variavel desncidade populacional
     pibpc1 = pib1 / populacao1;
-    superpoder1 = populacao1 + area1 + pib1 + pturistico1 + dpopulacional1 + pibpc1;
+    superpoder1 = (double) populacao1 + area1 + pib1 + pturistico1 + dpopulacional1 + pibpc1;
     printf("\n\n\n");
 
 
@@ -67,7 +68,7 @@ int main(){
         scanf("%s", &cidade2);
     
         printf("Quantidade de Habitantes:\n");
-        scanf("%d", &populacao2);
+        scanf("%lu", &populacao2);
         
         printf("Qual o tamanho da sua cidade em km²:\n");
         scanf("%f", &area2);
@@ -78,7 +79,7 @@ int main(){
         scanf("%f", &pib2);
         dpopulacional2 = populacao2 / area2;  //execução da divisão para adiquirir o valor da variavel de dpopulacional2
         pibpc2 = pib2 / populacao2;
-
+        superpoder2 = (double) populacao2 + area2 + pib2 + pturistico2 + dpopulacional2 + pibpc2;
 
          // Exibição dos dados cadastrados
     printf("=================================================\n");
@@ -93,7 +94,7 @@ int main(){
     printf("Cidade:%s\nHabitantes:%d\nArea(Km²):%f\nPontos Turisticos:%d\nPIB:%f\n", cidade1, populacao1, area1, pturistico1, pib1);
     printf("Desncidade Pupulacional é:%.2f \n", dpopulacional1);
     printf("Seu PIB per Capita é: %.2f\n", pibpc1);
-    printf("NIVEL DE PODER: %.2f\n", superpoder1);
+    printf("NIVEL DE PODER: %.2lf\n", superpoder1);
     printf("---------------------------------\n\n\n");
 
 
@@ -106,16 +107,22 @@ int main(){
     printf("Cidade:%s\nHabitantes:%d\nArea(Km²):%f\nPontos Turisticos:%d\nPIB:%f\n", cidade2, populacao2, area2, pturistico2, pib2);
     printf("Desncidade Pupulacional é:%.2f \n", dpopulacional2);
     printf("Seu PIB per Capita é: %.2f\n", pibpc2);
+    printf("NIVEL DE PODER: %.2lf\n", superpoder2);
     printf("---------------------------------\n");
 
 
 
 
     //agora comparador de cartas
+    printf("===NESTA COMPARAÇÃO DE DADOS DAS CARTAS 1 É VERDADEOIRO 0 É FALSO");
     printf("!!VAMOS COMPARAR AS CARTAS!!\n\n");
      
     printf("A QUANTIDADE DE HABITANTES carta1 venceu: %d\n",populacao1 > populacao2);
     printf("Maior Area em km² é a carta1: %d\n", area1 > area2);
+    printf("Mais pontos turisticos é a carta1: %d\n", pturistico1 > pturistico2);
+    printf("Menor dencidade populacional é a carta1: %d\n", dpopulacional1 < dpopulacional2);
+    printf("Maior PIB per Capita é da carta1:%d\n", pibpc1 > pibpc2);
+    printf("CARTA COM O MAIOR PODER É A CARTA1: %d\n", superpoder1 > superpoder2);
 
 
 return 0;
