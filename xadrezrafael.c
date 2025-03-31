@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+
+
+
 int main(){
 
 //minha intenção nessas variaveis é que o jogador incira dados que determine a "força" da carta
@@ -12,8 +15,10 @@ int main(){
     char cidade2 [20];
     int populacao1, populacao2, pturistico1, pturistico2; //"pturistico" é a quantidade de pontos turistico.
     float area1, area2, pib1, pib2, dpopulacional1, dpopulacional2, pibpc1, pibpc2;
+    unsigned long int superpoder1, superpoder2;
+    float populacao, area, pib, pturisticos, dpopulacional, pibpc, superpoder;
 
-
+            //introdução do jogo!
     printf("========================================\n");
     printf("    !!BEM VINDO AO JOGO SUPER TRUNFO!!    \n ");
     printf("========================================\n");
@@ -46,6 +51,7 @@ int main(){
     scanf("%f", &pib1);
     dpopulacional1 = populacao1 / area1;//execução para adiquirir o valor da variavel desncidade populacional
     pibpc1 = pib1 / populacao1;
+    superpoder1 = populacao1 + area1 + pib1 + pturistico1 + dpopulacional1 + pibpc1;
     printf("\n\n\n");
 
 
@@ -87,6 +93,7 @@ int main(){
     printf("Cidade:%s\nHabitantes:%d\nArea(Km²):%f\nPontos Turisticos:%d\nPIB:%f\n", cidade1, populacao1, area1, pturistico1, pib1);
     printf("Desncidade Pupulacional é:%.2f \n", dpopulacional1);
     printf("Seu PIB per Capita é: %.2f\n", pibpc1);
+    printf("NIVEL DE PODER: %.2f\n", superpoder1);
     printf("---------------------------------\n\n\n");
 
 
@@ -101,6 +108,14 @@ int main(){
     printf("Seu PIB per Capita é: %.2f\n", pibpc2);
     printf("---------------------------------\n");
 
+
+
+
+    //agora comparador de cartas
+    printf("!!VAMOS COMPARAR AS CARTAS!!\n\n");
+     
+    printf("A QUANTIDADE DE HABITANTES carta1 venceu: %d\n",populacao1 > populacao2);
+    printf("Maior Area em km² é a carta1: %d\n", area1 > area2);
 
 
 return 0;
